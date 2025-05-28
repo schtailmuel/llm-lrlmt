@@ -29,7 +29,7 @@ class FragmentsShotProcessor:
     def get_fragment_shots(self, text):        
         result = self.retriever.get_fragment_shots(text)
 
-        self.stats["coverage"].append(len(result['unknown']) / result['num_words'])
+        self.stats["coverage"].append((result['num_words'] - len(result['unknown'])) / result['num_words'])
         self.stats["fragments"].append([x['fragment'] for x in result['shots']])
         self.stats["num_shots"].append(sum([len(x['examples']) for x in result['shots']]))
         self.stats["not_found"].append(result['unknown'])
@@ -37,12 +37,12 @@ class FragmentsShotProcessor:
         return result['shots']
 
     def get_prompt(self, text):
-        shots = self.get_fragment_shots(text, self.num_shots)
+        shots = self.get_fragment_shots(text)
 
         shots_str = ""
         for e in shots:
             shots_str += f"Examples that illustrate the usage of **{e['fragment']}**:\n\n"
-            for t in e["examples"]:
+            for t in e["examples"][:self.num_shots]:
                 shots_str += f"\t - {self.config['src_lang']}: {t['src_text']}\n"
                 shots_str += f"\t - {self.config['tgt_lang']}: {t['tgt_text']}\n\n"
 
