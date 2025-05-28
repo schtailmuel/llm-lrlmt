@@ -1,7 +1,16 @@
 # 🧠 Compensating for Data with Reasoning: Low-Resource Machine Translation with LLMs
 
-This repository contains the code and data for the paper:  
-**_“Compensating for Data with Reasoning: Low-Resource Machine Translation with LLMs”_**
+
+## 🧩 Fragmentshot Method
+
+In the paper, we introduce `Fragmentshot`, a novel prompting technique tailored for low-resource translation tasks.
+To make this approach more accessible, we provide a standalone Python package:
+
+👉 [fragmentshot](https://pypi.org/project/fragmentshot/) on PyPI
+
+Use this package to:
+  - Retrieve few-shot examples ("shots") for a given language pair and corpus
+  - Seamlessly integrate the shots into your LLM prompts
 
 ## 📁 Repository Structure
 
