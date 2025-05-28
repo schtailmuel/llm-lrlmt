@@ -17,6 +17,11 @@ Use this package to:
 - **`data/`**  
   Contains the datasets used for training and testing the translation models.
 
+  The data is also available in the 🤗 Hugging Face Datasets repository:
+  - [sfrontull/lld_valbadia-ita](https://huggingface.co/datasets/sfrontull/lld_valbadia-ita)
+  - [sfrontull/lld_gherd-ita](https://huggingface.co/datasets/sfrontull/lld_gherd-ita)
+  - [sfrontull/lld_valbadia-lld_gherd](https://huggingface.co/datasets/sfrontull/lld_valbadia-lld_gherd)
+
 - **`data.json`**  
   Configuration file mapping each language pair to its associated corpus and test files.
 
