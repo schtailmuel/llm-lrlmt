@@ -1,0 +1,107 @@
+{
+    "lvb-ita": {
+        "src": "lvb",
+        "tgt": "ita",
+        "src_lang": "Ladin",
+        "tgt_lang": "Italian",
+        "train": {
+            "src": "data/train/lvb-ita/dizionar-lvb.txt",
+            "tgt": "data/train/lvb-ita/dizionar-ita.txt"
+        },
+        "test": {
+            "src": "data/test/dev.lvb_Latn",
+            "tgt": "data/test/dev.ita_Latn"
+        }
+    },
+    "ita-lvb": {
+        "src": "ita",
+        "tgt": "lvb",
+        "src_lang": "Italian",
+        "tgt_lang": "Ladin (Val Badia)",
+        "train": {
+            "src": "data/train/lvb-ita/dizionar-ita.txt",
+            "tgt": "data/train/lvb-ita/dizionar-lvb.txt"
+        },
+        "test": {
+            "src": "data/test/dev.ita_Latn",
+            "tgt": "data/test/dev.lvb_Latn"
+        },
+        "refine": false
+    },
+    "lgh-ita": {
+        "src": "lgh",
+        "tgt": "ita",
+        "src_lang": "Ladin",
+        "tgt_lang": "Italian",
+        "train": {
+            "src": "data/train/lgh-ita/dizionar-lgh.txt",
+            "tgt": "data/train/lgh-ita/dizionar-ita.txt"
+        },
+        "test": {
+            "src": "data/test/dev.lgh_Latn",
+            "tgt": "data/test/dev.ita_Latn"
+        }
+    },
+    "ita-lgh": {
+        "src": "ita",
+        "tgt": "lgh",
+        "src_lang": "Italian",
+        "tgt_lang": "Ladin (Gherdëina)",
+        "train": {
+            "src": "data/train/lgh-ita/dizionar-ita.txt",
+            "tgt": "data/train/lgh-ita/dizionar-lgh.txt"
+        },
+        "test": {
+            "src": "data/test/dev.ita_Latn",
+            "tgt": "data/test/dev.lgh_Latn"
+        }
+    },
+    "lgh-lvb": {
+        "src": "lgh",
+        "mid": "ita",
+        "tgt": "lvb",
+        "src_lang": "Ladin (Gherdëina)",
+        "mid_lang": "Italian",
+        "tgt_lang": "Ladin (Val Badia)",
+        "src-pivot": {
+            "src": "data/train/lvb-ita/dizionar-lvb.txt",
+            "tgt": "data/train/lvb-ita/dizionar-ita.txt"
+        },
+        "pivot-tgt": {
+            "src": "data/train/lgh-ita/dizionar-ita.txt",
+            "tgt": "data/train/lgh-ita/dizionar-lgh.txt"
+        },
+        "train": {
+            "src": "data/train/lvb-lgh/dizionar-lgh.txt",
+            "tgt": "data/train/lvb-lgh/dizionar-lvb.txt"
+        },
+        "test": {
+            "src": "data/test/dev.lgh_Latn",
+            "tgt": "data/test/dev.lvb_Latn"
+        }
+    },
+    "lvb-lgh": {
+        "src": "lvb",
+        "mid": "ita",
+        "tgt": "lgh",
+        "src_lang": "Ladin (Val Badia)",
+        "mid_lang": "Italian",
+        "tgt_lang": "Ladin (Gherdëina)",
+        "src-pivot": {
+            "src": "data/train/lgh-ita/dizionar-lgh.txt",
+            "tgt": "data/train/lgh-ita/dizionar-ita.txt"
+        },
+        "pivot-tgt": {
+            "src": "data/train/lvb-ita/dizionar-ita.txt",
+            "tgt": "data/train/lvb-ita/dizionar-lvb.txt"
+        },
+        "train": {
+            "src": "data/train/lvb-lgh/dizionar-lvb.txt",
+            "tgt": "data/train/lvb-lgh/dizionar-lgh.txt"
+        },
+        "test": {
+            "src": "data/test/dev.lvb_Latn",
+            "tgt": "data/test/dev.lgh_Latn"
+        }
+    }
+}

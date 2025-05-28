@@ -1,0 +1,4 @@
+Translate the following text from {src_lang} to {tgt_lang}. Enclose the translation within `[[` and `]]`, like:  [[Your {tgt_lang} translation here]].
+
+{src_lang}: {text}
+{tgt_lang}:

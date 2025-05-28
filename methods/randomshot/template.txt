@@ -1,0 +1,6 @@
+You are a translator tasked with translating from {src_lang} to {tgt_lang}. Below, you will find {num_shots} random example translations. Your task is to translate the final sentence from {src_lang} into {tgt_lang}. Please provide only the translated sentence, without any additional commentary.
+
+{shots}
+
+{src_lang}: {text}
+{tgt_lang}:

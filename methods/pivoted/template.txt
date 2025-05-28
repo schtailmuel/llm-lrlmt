@@ -1,0 +1,21 @@
+**Objective**: Translate the following sentence from {src_lang} into {tgt_lang} by prioritizing contextually validated fragments from examples.
+
+**{src_lang} Sentence**:  
+[[{text}]]
+
+**Contextual Guidance**:
+
+The following examples illustrate exact fragment translations from similar contexts. Prioritize the use of contextually validated fragment translations from the provided examples whenever applicable.
+
+{shots}
+
+**Reasoning Process**
+
+1. **Identify** key fragments in the input sentence that match or closely resemble validated translations.
+2. **Retrieve** the most contextually appropriate example from the provided references.
+3. **Adapt** the translation to ensure fluency while maintaining logical consistency.
+4. **Verify** that the final output preserves the intended meaning and aligns with prior translations.
+
+**Output Format**:  
+
+Enclose the final translation within `[[` and `]]`, like:  [[Your {tgt_lang} translation here]]
