@@ -9,8 +9,8 @@
             "tgt": "data/train/lvb-ita/dizionar-ita.txt"
         },
         "test": {
-            "src": "data/test/dev.lvb_Latn",
-            "tgt": "data/test/dev.ita_Latn"
+            "src": "data/test/test-lvb.txt",
+            "tgt": "data/test/test-ita.txt"
         }
     },
     "ita-lvb": {
@@ -23,8 +23,8 @@
             "tgt": "data/train/lvb-ita/dizionar-lvb.txt"
         },
         "test": {
-            "src": "data/test/dev.ita_Latn",
-            "tgt": "data/test/dev.lvb_Latn"
+            "src": "data/test/test-ita.txt",
+            "tgt": "data/test/test-lvb.txt"
         },
         "refine": false
     },
@@ -38,8 +38,8 @@
             "tgt": "data/train/lgh-ita/dizionar-ita.txt"
         },
         "test": {
-            "src": "data/test/dev.lgh_Latn",
-            "tgt": "data/test/dev.ita_Latn"
+            "src": "data/test/test-lgh.txt",
+            "tgt": "data/test/test-ita.txt"
         }
     },
     "ita-lgh": {
@@ -52,8 +52,8 @@
             "tgt": "data/train/lgh-ita/dizionar-lgh.txt"
         },
         "test": {
-            "src": "data/test/dev.ita_Latn",
-            "tgt": "data/test/dev.lgh_Latn"
+            "src": "data/test/test-ita.txt",
+            "tgt": "data/test/test-lgh.txt"
         }
     },
     "lgh-lvb": {
@@ -76,8 +76,8 @@
             "tgt": "data/train/lvb-lgh/dizionar-lvb.txt"
         },
         "test": {
-            "src": "data/test/dev.lgh_Latn",
-            "tgt": "data/test/dev.lvb_Latn"
+            "src": "data/test/test-lgh.txt",
+            "tgt": "data/test/test-lvb.txt"
         }
     },
     "lvb-lgh": {
@@ -100,8 +100,8 @@
             "tgt": "data/train/lvb-lgh/dizionar-lgh.txt"
         },
         "test": {
-            "src": "data/test/dev.lvb_Latn",
-            "tgt": "data/test/dev.lgh_Latn"
+            "src": "data/test/test-lvb.txt",
+            "tgt": "data/test/test-lgh.txt"
         }
     }
 }
