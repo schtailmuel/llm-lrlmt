@@ -61,7 +61,29 @@ python3 generate.py --language_pair <lang_pair> --method <method>
 
 **Output**: A new folder in prompts/ containing the generated prompt files.
 
-## 🌐 Translate Prompts
+## 🌐 Translation
+
+### 🔐 API Key Setup
+
+**Note:** Before running the `translate.py` script, make sure you have set up the necessary API keys. You can do this in two ways:
+
+- **Option 1: Define them in your environment**
+
+```bash
+export OPENAI_API_KEY='your_openai_api_key'
+export DEEPSEEK_API_KEY='your_deepseek_api_key'
+export TOGETHER_API_KEY='your_together_api_key'
+```
+
+- **Option 2: Use a `.env` file in the root of your project**  
+  Add the following lines to the `.env` file:
+
+```txt
+OPENAI_API_KEY=<your_openai_api_key>
+TOGETHER_API_KEY=<your_together_api_key>
+DEEPSEEK_API_KEY=<your_deepseek_api_key>
+``` 
+### 💬 Usage
 
 To translate all prompts in a given folder with a selected model, run:
 
