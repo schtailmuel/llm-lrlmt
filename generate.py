@@ -43,24 +43,18 @@ mtd_cls = methods[args.method](config, args)
 
 if args.sentence is not None:
     src_text = [args.sentence]
-    tgt_text = [""]
 else:
     with open(config["test"]["src"], "r") as f:
         src_text = [line.strip() for line in f.readlines()]
 
-    with open(config["test"]["tgt"], "r") as f:
-        tgt_text = [line.strip() for line in f.readlines()]
-
-
 if args.limit is not None:
     src_text = src_text[:args.limit]
-    tgt_text = tgt_text[:args.limit]
 
 current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 log_dir = f"prompts/{args.language_pair}_{args.method} _{current_time}/gen"
 os.makedirs(log_dir)
 
-for i, (s, t) in enumerate(zip(src_text, tgt_text)):
+for i, s in enumerate(src_text):
 
     print(f"Generating {i+1}/{len(src_text)}...", end="\r")
 
