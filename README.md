@@ -5,6 +5,9 @@ This repository contains the code and data for the paper:
 
 ## 📁 Repository Structure
 
+- **`data/`**  
+  Contains the datasets used for training and testing the translation models.
+
 - **`data.json`**  
   Configuration file mapping each language pair to its associated corpus and test files.
 
@@ -35,7 +38,7 @@ Also, ensure that your API keys for the relevant services (OpenAI, DeepSeek, Tog
 To generate prompts for a specific language pair and method, run:
 
 ```
-python3 generate.py --language_pair lvb-ita --method fragments
+python3 generate.py --language_pair <lang_pair> --method <method>
 ```
 
 **Arguments**:
