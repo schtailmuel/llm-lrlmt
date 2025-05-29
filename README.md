@@ -1,5 +1,6 @@
 # 🧠 Compensating for Data with Reasoning: Low-Resource Machine Translation with LLMs
 
+This repository contains the code and data for the paper [Compensating for Data with Reasoning: Low-Resource Machine Translation with LLMs](https://arxiv.org/abs/2505.22293)
 
 ## 🧩 Fragmentshot Method
 
@@ -97,3 +98,20 @@ python3 translate.py --prompts <path_to_prompts> --model <model_name> --language
   - <lang_pair>: Same as above
 
 **Output**: A new folder with the model name containing a .json file of the translations.
+
+
+## 📚 Citation
+
+If you use this work, please cite the paper (preprint):
+
+```bibtex
+@misc{frontull:stroehle:2025,
+      title={Compensating for Data with Reasoning: Low-Resource Machine Translation with LLMs}, 
+      author={Samuel Frontull and Thomas Ströhle},
+      year={2025},
+      eprint={2505.22293},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2505.22293}, 
+}
+```
