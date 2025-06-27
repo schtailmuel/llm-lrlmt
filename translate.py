@@ -16,6 +16,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--prompts", type=str, help="prompts folder", required=True)
 parser.add_argument("--model", type=str, default="gpt-3.5-turbo-0125", help="model")
 parser.add_argument("--output", type=str, default=None, help="output folder")
+parser.add_argument("--limit", type=int, default=200, help="seed")
 parser.add_argument("--seed", type=int, default=24, help="seed")
 args = parser.parse_args()
 
@@ -37,6 +38,8 @@ def read_prompt(i):
 idx = sorted(
     [int(os.path.splitext(f)[0]) for f in os.listdir(prompts_dir) if f.endswith(".txt")]
 )
+
+idx = idx[:args.limit] if args.limit > 0 else idx
 
 if args.output is None:
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')

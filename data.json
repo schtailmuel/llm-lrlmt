@@ -28,6 +28,20 @@
         },
         "refine": false
     },
+    "eng-fao": {
+        "src": "eng",
+        "tgt": "fao",
+        "src_lang": "English",
+        "tgt_lang": "Faroese",
+        "train": {
+            "src": "data/train/eng-fao/train-eng.txt",
+            "tgt": "data/train/eng-fao/train-fao.txt"
+        },
+        "test": {
+            "src": "data/flores/dev.eng_Latn",
+            "tgt": "data/flores/dev.fao_Latn"
+        }
+    },
     "lgh-ita": {
         "src": "lgh",
         "tgt": "ita",
