@@ -15,7 +15,8 @@ class FragmentsShotProcessor:
             "fragments": [],
             "not_found": [],
             "coverage": [],
-            "num_shots": [],
+            "num_shots_used": [],
+            "num_shots_found": [],
         }
 
         with open(self.config["train"]["src"], "r") as f:
@@ -31,14 +32,15 @@ class FragmentsShotProcessor:
 
         self.stats["coverage"].append((result['num_words'] - len(result['unknown'])) / result['num_words'])
         self.stats["fragments"].append([x['fragment'] for x in result['shots']])
-        self.stats["num_shots"].append(sum([len(x['examples']) for x in result['shots']]))
+        self.stats["num_shots_used"].append(sum([len(x['examples']) for x in result['shots'][:self.num_shots]]))
+        self.stats["num_shots_found"].append(sum([len(x['examples']) for x in result['shots']]))
         self.stats["not_found"].append(result['unknown'])
 
         return result['shots']
 
     def get_prompt(self, text):
         shots = self.get_fragment_shots(text)
-
+        
         shots_str = ""
         for e in shots:
             shots_str += f"Examples that illustrate the usage of **{e['fragment']}**:\n\n"
@@ -65,7 +67,8 @@ class FragmentsShotProcessor:
     def get_stats(self):
 
         avg_coverage = sum(self.stats["coverage"]) / len(self.stats["coverage"])
-        avg_shots = sum(self.stats["num_shots"]) / len(self.stats["num_shots"])
+        avg_shots_found = sum(self.stats["num_shots_found"]) / len(self.stats["num_shots_found"])
+        avg_shots_used = sum(self.stats["num_shots_used"]) / len(self.stats["num_shots_used"])
 
         win_stats = {}
         win_separate_stats = {}
@@ -89,7 +92,16 @@ class FragmentsShotProcessor:
                 "raw": self.stats["coverage"],
                 "count": {str(i): win_separate_stats[i] for i in range(1, 9)},
             },
-            "shots": {"average": avg_shots, "raw": self.stats["num_shots"]},
+            "shots": {
+                "average": {
+                    "found": avg_shots_found, 
+                    "used": avg_shots_used
+                }, 
+                "raw": {
+                    "found": self.stats["num_shots_found"], 
+                    "used": self.stats["num_shots_used"]
+                }
+            },
             "fragments": {
                 "count": {str(i): win_stats[i] for i in range(1, 9)},
                 "raw": self.stats["fragments"],
